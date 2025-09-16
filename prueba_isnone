@@ -1,0 +1,18 @@
+import unittest
+
+def buscar_numero(lista, numero):
+    if numero in lista:
+        return numero
+    return None   # si no está, devolvemos None
+
+class TestBuscarNumero(unittest.TestCase):
+    def test_numero_en_lista(self):
+        lista = [1, 2, 3, 4, 5]
+        self.assertIsNotNone(lista, 3)   # pasa porque 3 sí está en la lista y el resultado es !=none 
+
+    def test_numero_no_en_lista(self):
+        lista = [1, 2, 3, 4, 5]
+        self.assertIsNone(lista, 10)      # pasa porque 10 no está en la lista por lo tatnto resultado es None  
+
+if __name__ == "__main__":
+    unittest.main()
